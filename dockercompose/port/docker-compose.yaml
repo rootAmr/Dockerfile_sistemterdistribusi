@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  nginx-port1:
+    image: nginx:latest
+    container_name: nginx-port1
+    ports:
+      - protocol: tcp
+        published: 8080
+        target: 80
+  mongodb-port2:
+    image: mongo:latest
+    container_name: mongodb-port2
+    ports:
+      - "8081:80"
+    

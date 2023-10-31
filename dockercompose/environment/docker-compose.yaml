@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  nginx-example-env:
+    container_name: nginx-example-env
+    image: nginx:latest
+    ports: 
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: sister
+      MONGO_INITDB_ROOT_PASSWORD: sister
+      MONGO_INITDB_DATABASE: admin
+
