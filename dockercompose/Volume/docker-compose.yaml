@@ -1,0 +1,28 @@
+version: "3.9"
+
+volumes:
+  mongo-data1:
+    image:mongo: latest
+    container_name: mongodb1
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: Er0se
+      MONGO_INITDB_ROOT_PASSWORD: Er0s3
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+      - "mongo-data1:/data/db"
+  mongo-data2:
+    image: mongo:latest
+    container_name: mongodb3
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: Sh3rl0ck
+      MONGO_INITDB_ROOT_PASSWORD: h0lm3s
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+      - type: volume
+        source: mongo-data
+        target: "/data/db"
+        read_only: false

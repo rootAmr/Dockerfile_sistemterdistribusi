@@ -1,0 +1,15 @@
+services:
+
+nginx-example:
+  image: nginx:latest
+  container_name: nginx-example
+  ports:
+    - "8080:80"
+  deploy:
+    resources:
+      reservations:
+        cpus: "0.25"
+        memory: 50M
+      limits:
+        cpus: "0.5"
+        memory: 100M

@@ -1,0 +1,11 @@
+services:
+
+  #Komentar
+  nginx-example:
+    image: nginx:latest
+    container_name: nginx-example
+
+  #Komentar2
+  mongodb-example:
+    image: mongo:latest
+    container_name: mongodb_example

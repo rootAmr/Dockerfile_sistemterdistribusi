@@ -1,0 +1,17 @@
+services:
+
+mongodb-examp:
+  image:mongo: mongo:latest
+  container_name: mongodb_example
+  depends_on:
+    - mongodb-example
+  ports:
+    - "27017:27017"
+  environment:
+    MONGO_INITDB_ROOT_USERNAME: Er0s3
+    MONGO_INITDB_ROOT_PASSWORD: Er0s3
+    MONGO_INITDB_DATABASE: admin
+  networks:
+    network_example:
+      name: network_example
+      driver: bridge
